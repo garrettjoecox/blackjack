@@ -7,21 +7,22 @@ class window.App extends Backbone.Model
     @set 'dealerHand', deck.dealDealer()
 
     @get('playerHand').on 'stand', =>
-        @get('dealerHand').dealerPlay(@get('playerHand'));
+        @get('dealerHand').dealerPlay();
 
     @get('playerHand').on 'bust', =>
         @get('dealerHand').reveal();
-        console.log "bust"
-        @trigger 'bust', @
+        @trigger 'bust', "Bust!"
 
     @get('dealerHand').on 'done', =>
         dealerScore = @get('dealerHand').scoreFinal()
         playerScore = @get('playerHand').scoreFinal()
-        if playerScore == 21
-            @trigger 'blackjack', @
+        if playerScore is dealerScore
+            @trigger 'tie'
+        else if playerScore is 21
+            @trigger 'blackjack'
         else if playerScore > dealerScore
-            @trigger 'win', @
+            @trigger 'win'
         else if dealerScore > 21
-            @trigger 'dealerBust', @
+            @trigger 'dealerBust'
         else
-            @trigger 'lose', @
+            @trigger 'lose'

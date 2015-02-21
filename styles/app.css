@@ -1,42 +1,40 @@
 body{
   background: url("../img/felt.png");
 }
-#main {
-  position: relative;
-  top: 40px;
-}
-.buttons {
-  position: absolute;
-  left: calc(50% - 95px);
-  top: -25px;
-}
 
 .covered {
   background-image: url("../img/card-back.png") !important;
 }
 
-.hand {
-  overflow: auto;
+.card1 {
+  border: solid 1px black;
+  width: 118px;
+  border-radius: 10px;
+  height: 170px;
+  margin-bottom: -125px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-/*.player-hand-container {
-  position: absolute;
-  left: 10%;
+.hand {
+  margin-top: 50%;
+  color: white;
+  text-align: center
 }
-.dealer-hand-container {
-  position: absolute;
-  right: 10%;
-}*/
-.card1 {
-  float: left;
-  border: solid 1px black;
-  width: 120px;
-  border-radius: 5px;
-  height: 167px;
-  margin-right: -75px;
+
+.buttons {
+  margin-top: 25%;
 }
+
 .results {
-  position: absolute;
-  right: 10%;
-  top: 10%;
+  text-align: center;
+  color: white;
+}
+
+button{
+  position:relative;
+  width: 10vw;
+  top:50%;
+  left: 2vw;
 }
